@@ -103,7 +103,7 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
                       <p className="text-sm text-foreground/80 leading-relaxed font-serif">
                         We'd love to, but that would be difficult for a small independent brand. 💛
                       </p>
-                      <p className="text-xs text-muted-foreground mt-2 uppercase tracking-widest">
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-2 uppercase tracking-normal md:tracking-widest">
                         You have <span className="text-primary font-semibold">{phase.attemptsLeft}</span> more {phase.attemptsLeft === 1 ? "attempt" : "attempts"} to make your best offer.
                       </p>
                     </div>
@@ -132,7 +132,7 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
                     >
                       Continue
                     </Button>
-                    <p className="text-[10px] text-muted-foreground tracking-[0.1em] uppercase">
+                    <p className="text-[9px] md:text-[10px] text-muted-foreground tracking-tight md:tracking-[0.1em] uppercase whitespace-nowrap">
                       You have <span className="text-foreground font-medium">{attemptsLeft}</span> {attemptsLeft === 1 ? "attempt" : "attempts"} to make your best offer.
                     </p>
                   </div>
