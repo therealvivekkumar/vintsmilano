@@ -61,7 +61,7 @@ export function Footer() {
         <div className="w-full max-w-xs h-px bg-border/60 mb-6" />
 
         <p className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] text-center">
-          © 2026 Vints Milano. All rights reserved..
+          © 2026 Vints Milano. All rights reserved.
         </p>
       </div>
     </footer>
