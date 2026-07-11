@@ -110,7 +110,7 @@ export function PreOrderForm({
 
   if (isSuccess) {
     return (
-      <section id="preorder-form" className="py-16 md:py-32 bg-background scroll-mt-20 md:scroll-mt-24">
+      <section id="preorder-form" className="py-16 md:py-32 bg-background scroll-mt-16 md:scroll-mt-20">
         <div className="container mx-auto px-6 max-w-2xl text-center">
           <Card className="bg-[#f4f2ee] border-none rounded-none shadow-none">
             <CardContent className="pt-12 pb-12 px-6 md:pt-16 md:pb-16 md:px-16">
@@ -136,7 +136,7 @@ export function PreOrderForm({
   }
 
   return (
-    <section id="preorder-form" className="py-16 md:py-32 bg-[#f4f2ee] scroll-mt-20 md:scroll-mt-24">
+    <section id="preorder-form" className="py-16 md:py-32 bg-[#f4f2ee] scroll-mt-16 md:scroll-mt-20">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">Secure Your Fragrance</h2>

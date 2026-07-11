@@ -28,9 +28,9 @@ export function Footer() {
   return (
     <footer className="bg-[#f4f2ee] border-t border-border/50">
       <div className="container mx-auto px-6 py-16 md:py-20 flex flex-col items-center">
-        <img src={logoDark} alt="Vints Milano" className="h-9 w-auto mb-6" />
+        <img src={logoDark} alt="Vints Milano" className="h-14 w-auto mb-2" />
 
-        <div className="w-8 h-[1px] bg-primary/40 mb-8" />
+        <div className="w-8 h-[1px] bg-primary/40 mb-6" />
 
         <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">
           Stay Connected

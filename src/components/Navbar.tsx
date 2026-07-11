@@ -21,11 +21,11 @@ export function Navbar({ onLogoClick }: { onLogoClick?: () => void } = {}) {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-[200] transition-all duration-500 border-b border-transparent py-4 md:py-6 ${
-        scrolled ? "bg-background/95 backdrop-blur-md border-border/50 md:py-3 shadow-sm" : "bg-transparent"
+      className={`fixed top-0 w-full z-[200] transition-all duration-500 border-b border-transparent py-3 md:py-4 ${
+        scrolled ? "bg-background/95 backdrop-blur-md border-border/50 md:py-2 shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12 relative flex items-center justify-between min-h-14 md:min-h-16">
+      <div className="container mx-auto px-6 lg:px-12 relative flex items-center justify-between min-h-9 md:min-h-11">
         <div className={`hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] font-medium transition-colors duration-300 ${scrolled ? 'text-foreground/80' : 'text-white/80'}`}>
           <a href="/#collection" className="hover:text-primary transition-colors">Collection</a>
         </div>
@@ -35,7 +35,7 @@ export function Navbar({ onLogoClick }: { onLogoClick?: () => void } = {}) {
             src={scrolled ? logoDark : logoLight}
             style={{ filter: scrolled ? undefined : "drop-shadow(0 1px 3px rgba(0,0,0,0.5))" }}
             alt="Vints Milano"
-            className="h-14 md:h-16 w-auto transition-opacity duration-300"
+            className="h-9 md:h-11 w-auto transition-opacity duration-300"
           />
         </a>
         

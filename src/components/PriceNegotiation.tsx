@@ -70,7 +70,7 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
   };
 
   return (
-    <section id="preorder" className="py-16 md:py-32 bg-background scroll-mt-20 md:scroll-mt-24">
+    <section id="preorder" className="py-16 md:py-32 bg-background scroll-mt-16 md:scroll-mt-20">
       <div className="container mx-auto px-6 max-w-3xl">
 
         <div className="text-center mb-10 md:mb-16">
@@ -119,7 +119,7 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
                         value={offerInput}
                         onChange={(e) => { setOfferInput(e.target.value.replace(/\D/g, "")); setInputError(""); }}
                         onKeyDown={(e) => e.key === "Enter" && handleContinue()}
-                        className="rounded-none bg-transparent border-0 border-b border-border hover:border-primary focus-visible:border-primary focus-visible:ring-0 h-16 pl-14 pr-2 text-xl md:text-3xl font-serif text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none shadow-none"
+                        className="rounded-none bg-transparent border-0 border-b border-border hover:border-primary focus-visible:border-primary focus-visible:ring-0 h-16 pl-14 pr-14 text-xl md:text-3xl font-serif text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none shadow-none"
                       />
                     </div>
                     {inputError && <p className="text-destructive text-xs mt-4">{inputError}</p>}
