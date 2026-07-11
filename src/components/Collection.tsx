@@ -4,9 +4,9 @@ import { ProductCard } from "./ProductCard";
 
 export function Collection({ onSelectProduct }: { onSelectProduct: (id: string) => void }) {
   return (
-    <section id="collection" className="py-32 bg-background relative">
+    <section id="collection" className="py-16 md:py-32 bg-background relative scroll-mt-20 md:scroll-mt-24">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

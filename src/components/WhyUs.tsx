@@ -9,9 +9,9 @@ export function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="py-32 bg-[#f4f2ee] border-y border-border/50">
+    <section id="why-us" className="py-16 md:py-32 bg-[#f4f2ee] border-y border-border/50 scroll-mt-20 md:scroll-mt-24">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

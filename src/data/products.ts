@@ -12,7 +12,7 @@ import blueMoonModelImg from "@/assets/BM_with_Model.png";
 
 import rainMossDetail1 from "@/assets/VM_RM_New_Label.png";
 import blueMoonDetail1 from "@/assets/VM_BM_New_Label.png";
-import cloudHeavenDetail1 from "@/assets/VM_CH_New_Label.png";
+import cloudHeavenDetail1 from "@/assets/VM_CH_New_Label1.png";
 import midnightKodaiDetail1 from "@/assets/VM_MK_New_Label.png";
 
 export type Product = {

@@ -98,6 +98,9 @@ export function PreOrderForm({
         await new Promise(resolve => setTimeout(resolve, 1500));
       }
       setIsSuccess(true);
+      setTimeout(() => {
+        document.getElementById("preorder-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
     } catch {
       setErrorMsg("Something went wrong. Please try again or contact us.");
     } finally {
@@ -107,10 +110,10 @@ export function PreOrderForm({
 
   if (isSuccess) {
     return (
-      <section id="preorder-form" className="py-32 bg-background">
+      <section id="preorder-form" className="py-16 md:py-32 bg-background scroll-mt-20 md:scroll-mt-24">
         <div className="container mx-auto px-6 max-w-2xl text-center">
           <Card className="bg-[#f4f2ee] border-none rounded-none shadow-none">
-            <CardContent className="pt-16 pb-16 px-8 md:px-16">
+            <CardContent className="pt-12 pb-12 px-6 md:pt-16 md:pb-16 md:px-16">
               <div className="w-12 h-12 mx-auto border border-primary/30 flex items-center justify-center rounded-full mb-8">
                 <div className="w-2 h-2 bg-primary rounded-full" />
               </div>
@@ -133,15 +136,15 @@ export function PreOrderForm({
   }
 
   return (
-    <section id="preorder-form" className="py-32 bg-[#f4f2ee]">
+    <section id="preorder-form" className="py-16 md:py-32 bg-[#f4f2ee] scroll-mt-20 md:scroll-mt-24">
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">Secure Your Fragrance</h2>
           <p className="text-muted-foreground text-sm lg:text-base tracking-wide max-w-md mx-auto font-light">
             Reserve your fragrance from our limited inaugural batch. No payment required until dispatch.
           </p>
           {negotiatedPrice !== undefined && (
-            <div className="mt-10 inline-flex flex-col items-center gap-2">
+            <div className="mt-8 md:mt-10 inline-flex flex-col items-center gap-2">
               <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Your Reserved Price</span>
               <span className="text-3xl font-serif text-foreground">₹{negotiatedPrice.toLocaleString()}</span>
               <div className="w-8 h-[1px] bg-primary/40 mt-2" />
@@ -149,7 +152,7 @@ export function PreOrderForm({
           )}
         </div>
 
-        <div className="bg-card p-8 md:p-16 border-t border-border shadow-sm">
+        <div className="bg-card p-6 md:p-16 border-t border-border shadow-sm">
           {errorMsg && (
             <div className="mb-10 p-4 bg-destructive/5 border border-destructive/20 text-destructive text-sm text-center font-medium">
               {errorMsg}
@@ -213,7 +216,7 @@ export function PreOrderForm({
                         <SelectContent className="rounded-none border-border">
                           {products.map((p) => (
                             <SelectItem key={p.id} value={p.id} className="font-light focus:bg-primary/10">
-                              {p.name} — ₹{(negotiatedPrice ?? p.price).toLocaleString()}
+                              {p.name} (₹{(negotiatedPrice ?? p.price).toLocaleString()})
                             </SelectItem>
                           ))}
                         </SelectContent>

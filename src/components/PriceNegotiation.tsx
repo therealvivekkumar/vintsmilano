@@ -70,25 +70,19 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
   };
 
   return (
-    <section id="preorder" className="py-32 bg-background">
+    <section id="preorder" className="py-16 md:py-32 bg-background scroll-mt-20 md:scroll-mt-24">
       <div className="container mx-auto px-6 max-w-3xl">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">Make Your Offer</h2>
           <p className="text-muted-foreground text-sm lg:text-base tracking-wide max-w-md mx-auto font-light">
             Every handcrafted bottle begins with a conversation.
           </p>
         </div>
 
-        <div className="bg-card border border-border p-8 md:p-16 relative overflow-hidden">
-          {/* Decorative corners */}
-          <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/30" />
-          <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary/30" />
-          <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary/30" />
-          <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/30" />
-
+        <div className="bg-card p-6 md:p-16 border-t border-border shadow-sm">
           {/* Retail price display */}
-          <div className="flex flex-col items-center justify-center border-b border-border/50 pb-8 mb-10">
+          <div className="flex flex-col items-center justify-center border-b border-border/50 pb-6 mb-8 md:pb-8 md:mb-10">
             <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-3">Retail Price</span>
             <span className="text-3xl font-serif text-foreground">₹{RETAIL.toLocaleString()}</span>
           </div>
@@ -103,7 +97,7 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
             >
               {/* IDLE / INPUT STATE */}
               {(phase.type === "idle" || phase.type === "rejected_low") && (
-                <div className="space-y-8 max-w-md mx-auto">
+                <div className="space-y-6 md:space-y-8 max-w-md mx-auto">
                   {phase.type === "rejected_low" && (
                     <div className="bg-[#f4f2ee] p-6 text-center border-l-2 border-primary">
                       <p className="text-sm text-foreground/80 leading-relaxed font-serif">
@@ -116,7 +110,7 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
                   )}
 
                   <div className="text-center">
-                    <label className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Your Offer</label>
+                    <label className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4 md:mb-6 block">Your Offer</label>
                     <div className="relative max-w-[240px] mx-auto">
                       <span className="absolute left-6 top-1/2 -translate-y-1/2 text-muted-foreground font-serif text-2xl">₹</span>
                       <Input
@@ -125,14 +119,13 @@ export function PriceNegotiation({ onDealAccepted }: { onDealAccepted: (price: n
                         value={offerInput}
                         onChange={(e) => { setOfferInput(e.target.value.replace(/\D/g, "")); setInputError(""); }}
                         onKeyDown={(e) => e.key === "Enter" && handleContinue()}
-                        placeholder="Best price"
                         className="rounded-none bg-transparent border-0 border-b border-border hover:border-primary focus-visible:border-primary focus-visible:ring-0 h-16 pl-14 pr-2 text-xl md:text-3xl font-serif text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none shadow-none"
                       />
                     </div>
                     {inputError && <p className="text-destructive text-xs mt-4">{inputError}</p>}
                   </div>
 
-                  <div className="flex flex-col items-center pt-4 gap-6">
+                  <div className="flex flex-col items-center pt-2 md:pt-4 gap-4 md:gap-6">
                     <Button
                       onClick={handleContinue}
                       className="rounded-none h-14 px-12 bg-foreground text-background hover:bg-foreground/90 text-xs tracking-[0.2em] uppercase font-medium w-full transition-colors"
