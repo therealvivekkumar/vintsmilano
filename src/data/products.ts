@@ -15,6 +15,11 @@ import blueMoonDetail1 from "@/assets/VM_BM_New_Label.png";
 import cloudHeavenDetail1 from "@/assets/VM_CH_New_Label1.png";
 import midnightKodaiDetail1 from "@/assets/VM_MK_New_Label.png";
 
+import rainMossMaleModelImg from "@/assets/Rain_Moss_Male_Model.png";
+import blueMoonMaleModelImg from "@/assets/BlueMoon_Male_Model.png";
+import magicShroomMaleModelImg from "@/assets/MagicShroom_Male_Model.png";
+import midnightKodaiMaleModelImg from "@/assets/Midnight_Kodai_Male_Model.png";
+
 export type Product = {
   id: string;
   name: string;
@@ -43,7 +48,7 @@ export const products: Product[] = [
     size: "100 ml",
     productImage: rainMossImg,
     modelImage: rainMossModelImg,
-    additionalImages: [rainMossDetail1],
+    additionalImages: [rainMossMaleModelImg, rainMossDetail1],
     topNotes: ["Petrichor", "Green Leaves", "Bergamot"],
     middleNotes: ["Oakmoss", "Vetiver", "Cedar"],
     baseNotes: ["Sandalwood", "Musk", "Amber"],
@@ -60,7 +65,7 @@ export const products: Product[] = [
     size: "100 ml",
     productImage: blueMoonImg,
     modelImage: blueMoonModelImg,
-    additionalImages: [blueMoonDetail1],
+    additionalImages: [blueMoonMaleModelImg, blueMoonDetail1],
     topNotes: ["Aquatic", "Bergamot", "Mint"],
     middleNotes: ["Jasmine", "Blue Iris", "Sea Salt"],
     baseNotes: ["Cedarwood", "Musk", "White Amber"],
@@ -94,6 +99,7 @@ export const products: Product[] = [
     size: "100 ml",
     productImage: magicShroomImg,
     modelImage: magicShroomModelImg,
+    additionalImages: [magicShroomMaleModelImg],
     topNotes: ["Black Pepper", "Cardamom", "Grapefruit"],
     middleNotes: ["Truffle", "Patchouli", "Dark Rose"],
     baseNotes: ["Oud", "Benzoin", "Dark Musk"],
@@ -110,7 +116,7 @@ export const products: Product[] = [
     size: "100 ml",
     productImage: midnightKodaiImg,
     modelImage: midnightKodaiModelImg,
-    additionalImages: [midnightKodaiDetail1],
+    additionalImages: [midnightKodaiMaleModelImg, midnightKodaiDetail1],
     topNotes: ["Black Cardamom", "Saffron", "Aldehydes"],
     middleNotes: ["Dark Oud", "Leather", "Smoky Accord"],
     baseNotes: ["Amber", "Labdanum", "Deep Musk"],
