@@ -20,6 +20,9 @@ import blueMoonMaleModelImg from "@/assets/BlueMoon_Male_Model.png";
 import magicShroomMaleModelImg from "@/assets/MagicShroom_Male_Model.png";
 import midnightKodaiMaleModelImg from "@/assets/Midnight_Kodai_Male_Model.png";
 
+import northernLightsImg from "@/assets/Northern_Lights_Label.png";
+import northernLightsModelImg from "@/assets/Northern_Lights_Model.png";
+
 export type Product = {
   id: string;
   name: string;
@@ -36,6 +39,7 @@ export type Product = {
   longevity: string;
   projection: string;
   occasion: string;
+  outOfStock?: boolean;
 };
 
 export const products: Product[] = [
@@ -123,5 +127,22 @@ export const products: Product[] = [
     longevity: "12-20 hours",
     projection: "Strong to Intense",
     occasion: "Formal, Night, Special Events"
+  },
+  {
+    id: "northern-lights",
+    name: "Northern Lights",
+    tagline: "The sky's rarest performance.",
+    description: "Radiant with cool elegance and lasting depth. A fragrance that captures the magic of fleeting light against an endless night.",
+    price: 2499,
+    size: "100 ml",
+    productImage: northernLightsImg,
+    modelImage: northernLightsModelImg,
+    topNotes: ["Bergamot", "Juniper", "Icy Mint"],
+    middleNotes: ["Violet", "Ambroxan", "Frozen Pine"],
+    baseNotes: ["Amber", "Vetiver", "Musk"],
+    longevity: "12-20 hours",
+    projection: "Strong to Intense",
+    occasion: "Evening, Special Events, Winter, Signature Wear",
+    outOfStock: true
   }
 ];

@@ -11,8 +11,13 @@ export function ProductCard({ product, onSelect }: { product: Product; onSelect:
           <img 
             src={product.productImage} 
             alt={product.name} 
-            className="w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
+            className={`w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover:scale-105 ${product.outOfStock ? "opacity-60 grayscale-[0.3]" : ""}`}
           />
+          {product.outOfStock && (
+            <div className="absolute top-4 left-4 z-20 bg-background/90 backdrop-blur-sm border border-border px-3 py-1.5">
+              <span className="text-[9px] uppercase tracking-[0.2em] font-medium text-foreground/70">Out of Stock</span>
+            </div>
+          )}
         </div>
         
         <h3 className="font-serif text-3xl mb-3 text-foreground group-hover:text-primary transition-colors">

@@ -154,10 +154,15 @@ export function ProductDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="mb-4">
+            <div className="mb-4 flex items-center gap-2">
               <Badge variant="outline" className="rounded-none border-primary/30 text-primary uppercase tracking-[0.2em] text-[10px] px-3 py-1">
                 {product.size}
               </Badge>
+              {product.outOfStock && (
+                <Badge variant="outline" className="rounded-none border-border text-muted-foreground uppercase tracking-[0.2em] text-[10px] px-3 py-1">
+                  Out of Stock
+                </Badge>
+              )}
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-serif text-foreground mb-4 leading-tight">{product.name}</h1>
@@ -194,21 +199,30 @@ export function ProductDetail() {
               )}
             </div>
             <div className="flex items-center border border-border bg-background">
-              <Button variant="ghost" size="icon" className="h-12 w-12 rounded-none border-none hover:bg-muted text-foreground" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
+              <Button variant="ghost" size="icon" className="h-12 w-12 rounded-none border-none hover:bg-muted text-foreground" onClick={() => setQuantity(Math.max(1, quantity - 1))} disabled={product.outOfStock}>
                 <Minus className="w-4 h-4" />
               </Button>
               <span className="w-12 text-center text-sm font-medium">{quantity}</span>
-              <Button variant="ghost" size="icon" className="h-12 w-12 rounded-none border-none hover:bg-muted text-foreground" onClick={() => setQuantity(Math.min(10, quantity + 1))}>
+              <Button variant="ghost" size="icon" className="h-12 w-12 rounded-none border-none hover:bg-muted text-foreground" onClick={() => setQuantity(Math.min(10, quantity + 1))} disabled={product.outOfStock}>
                 <Plus className="w-4 h-4" />
               </Button>
             </div>
           </div>
-          <Button
-            className="w-full rounded-none h-14 bg-foreground text-background hover:bg-foreground/90 text-xs tracking-[0.2em] uppercase font-medium transition-colors"
-            onClick={handlePreorderClick}
-          >
-            Reserve Your Fragrance
-          </Button>
+          {product.outOfStock ? (
+            <Button
+              disabled
+              className="w-full rounded-none h-14 bg-muted text-muted-foreground text-xs tracking-[0.2em] uppercase font-medium cursor-not-allowed"
+            >
+              Currently Out of Stock
+            </Button>
+          ) : (
+            <Button
+              className="w-full rounded-none h-14 bg-foreground text-background hover:bg-foreground/90 text-xs tracking-[0.2em] uppercase font-medium transition-colors"
+              onClick={handlePreorderClick}
+            >
+              Reserve Your Fragrance
+            </Button>
+          )}
         </div>
       </div>
     </div>

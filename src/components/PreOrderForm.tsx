@@ -54,7 +54,7 @@ export function PreOrderForm({
       fullName: "",
       phone: "",
       email: "",
-      productId: preselectedProductId || "",
+      productId: products.some((p) => p.id === preselectedProductId && !p.outOfStock) ? preselectedProductId! : "",
       quantity: preselectedQuantity || 1,
       address: "",
       city: "",
@@ -65,7 +65,8 @@ export function PreOrderForm({
   });
 
   useEffect(() => {
-    if (preselectedProductId) form.setValue("productId", preselectedProductId);
+    const preselected = products.find((p) => p.id === preselectedProductId && !p.outOfStock);
+    if (preselected) form.setValue("productId", preselected.id);
     if (preselectedQuantity) {
       setQty(preselectedQuantity);
       form.setValue("quantity", preselectedQuantity);
@@ -214,7 +215,7 @@ export function PreOrderForm({
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="rounded-none border-border">
-                          {products.map((p) => (
+                          {products.filter((p) => !p.outOfStock).map((p) => (
                             <SelectItem key={p.id} value={p.id} className="font-light focus:bg-primary/10">
                               {p.name} (₹{(negotiatedPrice ?? p.price).toLocaleString()})
                             </SelectItem>
